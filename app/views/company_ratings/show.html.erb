@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @company_rating.user %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @company_rating.company %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @company_rating.rating %>
+</p>
+
+<%= link_to 'Edit', edit_company_rating_path(@company_rating) %> |
+<%= link_to 'Back', company_ratings_path %>

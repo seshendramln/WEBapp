@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <h1> <b>Title:</b>
+  <%= @company.name %>
+</p></h1>
+<p>
+  <b>Logo:</b><br>
+  <%=image_tag @company.logo.url(:thumb)%>
+</p>
+<p>
+ <h2> <b>Place:</b></h2>
+ <h2> <%= @company.place %></h2>
+</p>
+
+<body>
+  <b>Description:</b>
+ <h3> <%= @company.Description %></h3>
+
+<b>Total:</b>
+  <h3>Averaging:- <%= @total %><br/></h3>
+  <b>Rank:</b>
+  <h3>Rank:- <%= @count %><br/></h3>
+
+
+<h2><b>Rating:</b></h2>
+<table id="company" border="3" layout= "fixed" width=" 100%"  >
+  <colgroup>
+    <col style="width: 33%" />
+    <col style="width: 33%" />
+    <col style="width: 33%" />
+  
+  <tr>
+    <th>Trust and Responsibility Given:- <%= @avg_satisfaction %></th>
+    <th>Work, Amenities & Gadgets:- <%= @avg_work_environment %></th>
+    <th>Sex,Age & Cultural Diversity:- <%= @avg_cd  %></th>
+    <th>Autonomy & Flexibility:- <%= @avg_flexibility %></th>
+    <th> Atmosphere, Mood & Relationship with Team:- <%=@avg_relation %></th>
+    <th> Trust on Management & Leadership:- <%=  @avg_leadership  %></th>
+    <th>Sense of Belonging & pride for the company:-  <%= @avg_pride %></th>
+    <th> Learning & Improvement opportunities:- <%=  @avg_opportunities %></th>
+    <th>Opportunity to voice own Opinion:- <%= @avg_opinion%></th>
+    <th>Stimulating Job:- <%=  @avg_stimulatingjob %></th>
+    <th>Creativity & Innovation Opportunities:- <%= @avg_innovation%></th>
+    <th>RelationShip with Supervisor /Management:- <%=  @avg_management %></th>
+    <th>Compensation & Benefits:- <%= @avg_compensation %></th>
+    <th>Workload Balance:- <%=  @avg_workload %></th>
+    <th>Equality & Fairness:- <%= @avg_equality %></th>
+    <th>Clarity of Role, Goals & Objectives:- <%= @avg_objectives%></th>
+    <th>Cooperation, Coordination, Collabration & Efficiency:- <%= @avg_cooperation %></th>
+
+    <th>Guidance & Feedback received:- <%=  @avg_guidance %></th>
+    <th>Recognition & Reward:- <%= @avg_reward %></th>
+    <th>Career Growth Opportunities:- <%= @avg_career %></th>
+    <th>Consistency & Transperency :- <%= @avg_transparancy %></th>
+  </tr>
+  <tr >
+   <td><%= @avg_satisfaction %></td>
+    <td><%= @avg_work_environment %></td>
+    <td><%= @avg_cd  %></td>
+    <td><%= @avg_flexibility %></td>
+    <td><%=@avg_relation %></td>
+    <td> <%=  @avg_leadership  %></td>
+    <td> <%= @avg_pride %></td>
+    <td> <%=  @avg_opportunities %>s</td>
+    <td> <%= @avg_opinion%></td>
+    <td> <%=  @avg_stimulatingjob %></td>
+    <td> <%= @avg_innovation%></td>
+    <td> <%=  @avg_management %></td>
+    <td> <%= @avg_compensation %></td>
+    <td> <%=  @avg_workload %></td>
+    <td> <%= @avg_equality %></td>
+    <td> <%= @avg_objectives%></td>
+    <td><%= @avg_cooperation %></td>
+
+    <td><%=  @avg_guidance %></td>
+    <td><%= @avg_reward %></td>
+    <td><%= @avg_career %></td>
+    <td><%= @avg_transparancy %></td>
+        
+  </tr>
+      
+ </colgroup>
+</table>
+  
+
+
+ 
+
+
+<br /><br />
+
+ |
+<%= link_to 'Back', companies_path %>
+</body>

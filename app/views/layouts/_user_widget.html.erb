@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <p>Welcome <%= current_user.email %></p>
+   <%= link_to "sign out", destroy_user_session_path %>
+
+   <%if current_user.profile.blank? %>
+	 <%= link_to "Create profile ", new_profile_path %> 
+	<% else %>
+	 <%= link_to "Edit profile ", edit_profile_path(current_user.profile) if current_user.profile.id%>
+	<%end %>
+   
+<% else %>
+
+  <p>You are not signed in.</p>
+  <%= link_to 'login', new_user_session_path,:class=>"login" %>
+  
+<%= link_to 'register', new_user_registration_path %>
+
+<% end %>

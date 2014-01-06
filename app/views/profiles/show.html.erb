@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Companies</strong>
+  <% @profile.companies.each do |company| %>
+  	<li><%= company.name %></li>
+  <% end %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user.email %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%#= link_to 'Back', profiles_path %>

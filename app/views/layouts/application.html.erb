@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skillable App</title>
+  
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+   <%= stylesheet_link_tag "form_slider/application", media: "all" %>
+   <%= javascript_include_tag "form_slider/application" %>
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", :cache => true %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="/">Skillable App</a></h1>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+
+       <%= render 'layouts/user_widget' %>
+          
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf"></ul>
+      </div>
+    </div>    
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> Skillable App.</p>
+          </div>      
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>    
+  </div>
+ 
+</body>
+</html>

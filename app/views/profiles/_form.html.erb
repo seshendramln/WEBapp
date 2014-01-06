@@ -1,0 +1,36 @@
+<%= nested_form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.fields_for :company_profiles do |task_form| %>
+    <div class="field">
+      <%= task_form.label :company_id %><br />
+      <%= task_form.collection_select :company_id, Company.all, :id, :name %>
+    </div>
+    <div class="field">
+      <%= task_form.label :to_date %><br />
+      <%= task_form.text_field :to_date,:class=>"to_date" %>
+    </div>
+    <div class="field">
+      <%= task_form.label :from_date %><br />
+      <%= task_form.text_field :from_date,:class=>"from_date"  %>
+    </div>
+    <div class="field">
+      <%= task_form.link_to_remove "Remove this company" %>
+    </div>
+  <% end %>
+<p><%= f.link_to_add "Add a company", :company_profiles %></p>
+
+   <%#= f.input :company_ids ,:collection =>Company.all, :as => :check_boxes %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

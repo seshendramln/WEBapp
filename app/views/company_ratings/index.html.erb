@@ -1,0 +1,31 @@
+<h1>Listing company_ratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Company</th>
+      <th>Rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company_ratings.each do |company_rating| %>
+      <tr>
+        <td><%= company_rating.user %></td>
+        <td><%= company_rating.company %></td>
+        <td><%= company_rating.rating %></td>
+        <td><%= link_to 'Show', company_rating %></td>
+        <td><%= link_to 'Edit', edit_company_rating_path(company_rating) %></td>
+        <td><%= link_to 'Destroy', company_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company rating', new_company_rating_path %>
