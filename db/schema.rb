@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103131606) do
+ActiveRecord::Schema.define(version: 20140115115651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,26 @@ ActiveRecord::Schema.define(version: 20140103131606) do
     t.string   "name"
     t.string   "place"
     t.text     "Description"
+    t.integer  "attrib_work_environment"
+    t.integer  "attrib_cd"
+    t.integer  "attrib_flexibility"
+    t.integer  "attrib_relation"
+    t.integer  "attrib_leadership"
+    t.integer  "attrib_pride"
+    t.integer  "attrib_opportunities"
+    t.integer  "attrib_opinion"
+    t.integer  "attrib_stimulatingjob"
+    t.integer  "attrib_innovation"
+    t.integer  "attrib_management"
+    t.integer  "attrib_compensation"
+    t.integer  "attrib_workload"
+    t.integer  "attrib_equality"
+    t.integer  "attrib_objectives"
+    t.integer  "attrib_cooperation"
+    t.integer  "attrib_guidance"
+    t.integer  "attrib_reward"
+    t.integer  "attrib_career"
+    t.integer  "attrib_transparancy"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "profile_id"
@@ -27,6 +47,10 @@ ActiveRecord::Schema.define(version: 20140103131606) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.integer  "rank"
+    t.integer  "satisfaction"
+    t.integer  "reviews"
+    t.integer  "attrib_satisfaction"
   end
 
   create_table "company_profiles", force: true do |t|

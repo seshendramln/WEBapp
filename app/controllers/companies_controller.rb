@@ -3,8 +3,8 @@ class CompaniesController < ApplicationController
   
 
   def index
-    #@companies = Company.all
-    @companies = CompanyRating.select('company_id,avg(satisfaction+work_environment+cd+flexibility+relation+leadership+pride+opportunities+opinion+stimulatingjob+innovation+management+compensation+workload+equality+objectives+cooperation+guidance+reward+career+transparancy) as rating, COUNT(DISTINCT(user_id,company_id)) as rank').group('company_id').order("rank DESC, rating ASC") 
+    @companies = Company.all
+    #@companies = CompanyRating.select('company_id,avg(satisfaction+work_environment+cd+flexibility+relation+leadership+pride+opportunities+opinion+stimulatingjob+innovation+management+compensation+workload+equality+objectives+cooperation+guidance+reward+career+transparancy) as rating, COUNT(DISTINCT(user_id,company_id)) as rank').group('company_id').order("rank DESC, rating ASC") 
     #count = CompanyRating.count      
     #@companies = CompanyRating.select('company_id,avg(satisfaction+work_environment+cd+flexibility+relation+leadership+pride+opportunities+opinion+stimulatingjob+innovation+management+compensation+workload+equality+objectives+cooperation+guidance+reward+career+transparancy) as rating, COUNT(DISTINCT(user_id,company_id)) as rank').group('company_id').order("coalesce('rank', #{count}) ASC")
     #@companies=CompanyRating.select('avg(satisfaction+work_environment+cd+flexibility+relation+leadership+pride+opportunities+opinion+stimulatingjob+innovation+management+compensation+workload+equality+objectives+cooperation+guidance+reward+career+transparancy) as rating,COUNT(DISTINCT(user_id,company_id)) as rank').order('rank')

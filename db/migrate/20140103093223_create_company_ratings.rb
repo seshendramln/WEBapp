@@ -5,7 +5,7 @@ class CreateCompanyRatings < ActiveRecord::Migration
       t.references :company, index: true
       t.integer :satisfaction
       t.integer :work_environment
-      t.integer  :cd
+       t.integer  :cd
 	   t.integer  :flexibility
 	   t.integer  :relation
 	   t.integer  :leadership

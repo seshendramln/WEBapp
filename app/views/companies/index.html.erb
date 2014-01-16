@@ -11,8 +11,8 @@
     <th>Name</th>
     <th>Logo</th>
     <th>Place</th>
-    <th> RATING</th>
-    <th> Rank</th>
+    <th> Total Satisfaction score</th>
+    <th> Total no.of Reviews</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,15 +20,15 @@
   
 <% @companies.each do |company| %>  
   <tr >
-    <td><%= Company.find(company.company_id).id%></td>
-    <td><%= Company.find(company.company_id).name %></td>
-    <td><%=image_tag Company.find(company.company_id).logo.url(:thumb)%></td>
-    <td><%= Company.find(company.company_id).place %></td>
-   
-    <td><%= company.rating%></td>
-    <td><%= company.rank %></td>
+    <td><%= company.id%></td>
+    <td><%= company.name %></td>
+    <td><%=image_tag company.logo.url(:thumb)%></td>
+    <td><%= company.place %></td>
+    <td></td>
+    <td><%= company.reviews %></td>
+    
     <% if !current_user.blank? %>
-      <td><%= link_to 'VIEW', company_path(company.company_id) %></td>
+      <td><%= link_to 'VIEW', company %></td>
     <%else%>
       <td><%= link_to 'VIEW', new_user_session_path,:class=>"login" %></td>
     <%end %>
