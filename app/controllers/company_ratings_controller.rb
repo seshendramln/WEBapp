@@ -70,7 +70,8 @@ class CompanyRatingsController < ApplicationController
 
   def user_rating   
     company_id = current_user.profile.companies.map(&:id)
-    rating = current_user.company_ratings.find(:all,:conditions=>["user_id = ? and company_id IN (?)",current_user.id,company_id])
+    #rating = current_user.company_ratings.find(:all,:conditions=>["user_id = ? and company_id IN (?)",current_user.id,company_id])
+    rating = current_user.company_ratings.where("user_id = ? and company_id IN (?)",current_user.id,company_id)
     if rating.size !=company_id.size
       if session[:company_id].blank?
         session[:company_id] = params[:company_id] 

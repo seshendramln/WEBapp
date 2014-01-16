@@ -24,6 +24,7 @@ class CreateCompanies < ActiveRecord::Migration
 	   t.integer  :attrib_reward
 	   t.integer  :attrib_career
 	   t.integer  :attrib_transparancy
+	   t.integer  :totalreviews
       t.timestamps
     end
   end

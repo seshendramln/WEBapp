@@ -15,5 +15,7 @@ class CompanyRating < ActiveRecord::Base
   def update_post_update_attribscore
    self.company.update_attribscore
   end
+
+  
 end
  

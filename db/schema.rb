@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140115115651) do
     t.integer  "attrib_reward"
     t.integer  "attrib_career"
     t.integer  "attrib_transparancy"
+    t.integer  "totalreviews"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "profile_id"
