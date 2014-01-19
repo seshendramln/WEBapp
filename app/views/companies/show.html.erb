@@ -18,9 +18,10 @@
  <h3> <%= @company.Description %></h3>
 
 <b>Total:</b>
-  <h3>Averaging:- <%= @total %><br/></h3>
-  <b>Rank:</b>
-  <h3>Rank:- <%= @count %><br/></h3>
+  <h3>Satisfaction Score:- <%= @company.satisfaction%><br/></h3>
+  <b>No.of Reviews:</b>
+  <h3>Rank:- <%= @company.reviews %><br/></h3>
+  <h3>Current User Satisfaction:- <%= @current_user_satisfaction %> <br/></h3>
 
 
 <h2><b>Rating:</b></h2>
@@ -31,52 +32,52 @@
     <col style="width: 33%" />
   
   <tr>
-    <th>Trust and Responsibility Given:- <%= @avg_satisfaction %></th>
-    <th>Work, Amenities & Gadgets:- <%= @avg_work_environment %></th>
-    <th>Sex,Age & Cultural Diversity:- <%= @avg_cd  %></th>
-    <th>Autonomy & Flexibility:- <%= @avg_flexibility %></th>
-    <th> Atmosphere, Mood & Relationship with Team:- <%=@avg_relation %></th>
-    <th> Trust on Management & Leadership:- <%=  @avg_leadership  %></th>
-    <th>Sense of Belonging & pride for the company:-  <%= @avg_pride %></th>
-    <th> Learning & Improvement opportunities:- <%=  @avg_opportunities %></th>
-    <th>Opportunity to voice own Opinion:- <%= @avg_opinion%></th>
-    <th>Stimulating Job:- <%=  @avg_stimulatingjob %></th>
-    <th>Creativity & Innovation Opportunities:- <%= @avg_innovation%></th>
-    <th>RelationShip with Supervisor /Management:- <%=  @avg_management %></th>
-    <th>Compensation & Benefits:- <%= @avg_compensation %></th>
-    <th>Workload Balance:- <%=  @avg_workload %></th>
+    <th>Trust and Responsibility Given:- </th>
+    <th>Work, Amenities & Gadgets:-</th>
+    <th>Sex,Age & Cultural Diversity:- </th>
+    <th>Autonomy & Flexibility:- </th>
+    <th> Atmosphere, Mood & Relationship with Team:- </th>
+    <th> Trust on Management & Leadership:-</th>
+    <th>Sense of Belonging & pride for the company:-  </th>
+    <th> Learning & Improvement opportunities:- </th>
+    <th>Opportunity to voice own Opinion:- </th>
+    <th>Stimulating Job:- </th>
+    <th>Creativity & Innovation Opportunities:- </th>
+    <th>RelationShip with Supervisor /Management:- </th>
+    <th>Compensation & Benefits:- </th>
+    <th>Workload Balance:- </th>
     <th>Equality & Fairness:- <%= @avg_equality %></th>
-    <th>Clarity of Role, Goals & Objectives:- <%= @avg_objectives%></th>
-    <th>Cooperation, Coordination, Collabration & Efficiency:- <%= @avg_cooperation %></th>
+    <th>Clarity of Role, Goals & Objectives:- </th>
+    <th>Cooperation, Coordination, Collabration & Efficiency:- </th>
 
-    <th>Guidance & Feedback received:- <%=  @avg_guidance %></th>
-    <th>Recognition & Reward:- <%= @avg_reward %></th>
-    <th>Career Growth Opportunities:- <%= @avg_career %></th>
-    <th>Consistency & Transperency :- <%= @avg_transparancy %></th>
+    <th>Guidance & Feedback received:- </th>
+    <th>Recognition & Reward:- </th>
+    <th>Career Growth Opportunities:- </th>
+    <th>Consistency & Transperency :- </th>
   </tr>
   <tr >
-   <td><%= @avg_satisfaction %></td>
-    <td><%= @avg_work_environment %></td>
-    <td><%= @avg_cd  %></td>
-    <td><%= @avg_flexibility %></td>
-    <td><%=@avg_relation %></td>
-    <td> <%=  @avg_leadership  %></td>
-    <td> <%= @avg_pride %></td>
-    <td> <%=  @avg_opportunities %>s</td>
-    <td> <%= @avg_opinion%></td>
-    <td> <%=  @avg_stimulatingjob %></td>
-    <td> <%= @avg_innovation%></td>
-    <td> <%=  @avg_management %></td>
-    <td> <%= @avg_compensation %></td>
-    <td> <%=  @avg_workload %></td>
-    <td> <%= @avg_equality %></td>
-    <td> <%= @avg_objectives%></td>
-    <td><%= @avg_cooperation %></td>
+   <td><%= @avg_satisfaction.shift %></td>
+    <td><%= @avg_work_environment .shift %></td>
+    <td><%= @avg_cd.shift   %></td>
+    <td><%= @avg_flexibility.shift  %></td>
+    <td><%=@avg_relation.shift  %></td>
+    <td> <%=  @avg_leadership.shift   %></td>
+    <td> <%= @avg_pride.shift  %></td>
+    <td> <%=  @avg_opportunities.shift  %></td>
+    <td> <%= @avg_opinion.shift %></td>
+    <td> <%=  @avg_stimulatingjob.shift  %></td>
+    <td> <%= @avg_innovation.shift %></td>
+    <td> <%=  @avg_management.shift  %></td>
+    <td> <%= @avg_compensation.shift  %></td>
+    <td> <%=  @avg_workload.shift  %></td>
+    <td> <%= @avg_equality.shift  %></td>
+    <td> <%= @avg_objectives.shift %></td>
+    <td><%= @avg_cooperation.shift  %></td>
 
-    <td><%=  @avg_guidance %></td>
-    <td><%= @avg_reward %></td>
-    <td><%= @avg_career %></td>
-    <td><%= @avg_transparancy %></td>
+    <td><%=  @avg_guidance.shift  %></td>
+    <td><%= @avg_reward.shift  %></td>
+    <td><%= @avg_career.shift  %></td>
+    <td><%= @avg_transparancy.shift  %></td>
         
   </tr>
       

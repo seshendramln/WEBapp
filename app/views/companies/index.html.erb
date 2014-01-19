@@ -14,8 +14,7 @@
     <th> Total Satisfaction score</th>
     <th> Total no.of Reviews</th>
 
-    <th></th>
-    <th></th>
+   
     <th></th>
   </tr>
   
@@ -28,16 +27,13 @@
     <td><%= company.satisfaction %> </td>
     <td><%= company.totalreviews %></td>
     
-    <% if !current_user.blank? %>
-      <td><%= link_to 'VIEW', company %></td>
-    <%else%>
-      <td><%= link_to 'VIEW', new_user_session_path,:class=>"login" %></td>
-    <%end %>
+    <td><%= link_to 'VIEW', company %></td>
 
+<% end %>
          
 
   </tr>
-<% end %>
+
  </colgroup>
 </table>
 

@@ -4,14 +4,14 @@
 
   <div class="form-inputs">
     <%= hidden_field_tag 'company_rating[company_id]' ,@company_rating.company_id %>
-    <%= f.input :satisfaction, as: :slider, step: 1, color: 'red'%>
+    <%= f.input :satisfaction, as: :slider,  step: 1, color: 'red'%>
     <%= f.input :work_environment,as: :slider, step: 1, color: 'red' %>
     <%= f.input :cd, as: :slider, step: 1, color: 'red'%>
     <%= f.input :flexibility,as: :slider, step: 1, color: 'red' %>
     <%= f.input :relation, as: :slider, step: 1, color: 'red'%>
     <%= f.input :leadership,as: :slider, step: 1, color: 'red' %>
     <%= f.input :pride,as: :slider, step: 1, color: 'red' %>
-    <%= f.input :opportunities, as: :range,min:0, max:100, step: 1, color: 'red'%>
+    <%= f.input :opportunities, as: :slider, step: 1, color: 'red'%>
     <%= f.input :opinion,as: :slider, step: 1, color: 'red' %>
     <%= f.input :stimulatingjob, as: :slider, step: 1, color: 'red'%>
     <%= f.input :innovation,as: :slider, step: 1, color: 'red' %>
