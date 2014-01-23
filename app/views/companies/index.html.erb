@@ -20,14 +20,14 @@
   
 <% @companies.each do |company| %>  
   <tr >
-    <td><%= company.rank%></td>
+    <td><%= company.rank.to_i%></td>
     <td><%= company.name %></td>
     <td><%=image_tag company.logo.url(:thumb)%></td>
     <td><%= company.place %></td>
-    <td><%= company.satisfaction %> </td>
-    <td><%= company.totalreviews %></td>
-    
+    <td><%= company.satisfaction.to_i %> </td>
+    <td><%= company.totalreviews.to_i %></td>
     <td><%= link_to 'VIEW', company %></td>
+    
 
 <% end %>
          

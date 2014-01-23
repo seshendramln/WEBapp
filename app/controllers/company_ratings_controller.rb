@@ -15,6 +15,7 @@ class CompanyRatingsController < ApplicationController
   # GET /company_ratings/new
   def new
     @company_rating = CompanyRating.new
+
   end
 
   # GET /company_ratings/1/edit
@@ -67,9 +68,9 @@ class CompanyRatingsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=begin
   def user_rating   
-    company_id = current_user.profile.companies.map(&:id)
+    company_id = current_user.profile.companies.map(&:id) 
     #rating = current_user.company_ratings.find(:all,:conditions=>["user_id = ? and company_id IN (?)",current_user.id,company_id])
     rating = current_user.company_ratings.where("user_id = ? and company_id IN (?)",current_user.id,company_id)
     if rating.size !=company_id.size
@@ -88,7 +89,36 @@ class CompanyRatingsController < ApplicationController
       render :json => "redirect".to_json
       # redirect_to company_path(params[:company_id])
     end
-  end
+    end
+=end
+def user_rating  
+  if current_user.profile.nil?
+    #new_profile_path  
+     render :json => "redirect".to_json  
+  else
+   company_id = current_user.profile.companies.map(&:id)
+   #rating = current_user.company_ratings.find(:all,:conditions=>["user_id = ? and company_id IN (?)",current_user.id,company_id])
+   rating = current_user.company_ratings.where("user_id = ? and company_id IN (?)",current_user.id,company_id)
+   if rating.size !=company_id.size
+     if session[:company_id].blank?
+       session[:company_id] = params[:company_id]
+       render :json=>"redirect".to_json
+     else
+       company_id = company_id - rating.map(&:company_id)
+       @company_rating = current_user.company_ratings.new(:company_id=>company_id.first)
+       @company = Company.find(company_id.first)
+       session[:company_id] = params[:company_id]
+       render :layout =>false
+     end
+   else
+     session[:company_id] = nil
+     render :json => "redirect".to_json
+     # redirect_to company_path(params[:company_id])
+   end
+ end
+ end
+
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company_rating

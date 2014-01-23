@@ -19,8 +19,7 @@
 
 <b>Total:</b>
   <h3>Satisfaction Score:- <%= @company.satisfaction%><br/></h3>
-  <b>No.of Reviews:</b>
-  <h3>Rank:- <%= @company.reviews %><br/></h3>
+  <h3> <b>No.of Reviews:- </b><%= @company.totalreviews.to_i %><br/></h3>
   <h3>Current User Satisfaction:- <%= @current_user_satisfaction %> <br/></h3>
 
 
@@ -30,8 +29,9 @@
     <col style="width: 33%" />
     <col style="width: 33%" />
     <col style="width: 33%" />
-  
+
   <tr>
+    <th> </th>
     <th>Trust and Responsibility Given:- </th>
     <th>Work, Amenities & Gadgets:-</th>
     <th>Sex,Age & Cultural Diversity:- </th>
@@ -46,7 +46,7 @@
     <th>RelationShip with Supervisor /Management:- </th>
     <th>Compensation & Benefits:- </th>
     <th>Workload Balance:- </th>
-    <th>Equality & Fairness:- <%= @avg_equality %></th>
+    <th>Equality & Fairness:-</th>
     <th>Clarity of Role, Goals & Objectives:- </th>
     <th>Cooperation, Coordination, Collabration & Efficiency:- </th>
 
@@ -56,6 +56,7 @@
     <th>Consistency & Transperency :- </th>
   </tr>
   <tr >
+  <th scope="row"> <%= current_user.email %></th>
    <td><%= @avg_satisfaction.shift %></td>
     <td><%= @avg_work_environment .shift %></td>
     <td><%= @avg_cd.shift   %></td>
@@ -78,6 +79,33 @@
     <td><%= @avg_reward.shift  %></td>
     <td><%= @avg_career.shift  %></td>
     <td><%= @avg_transparancy.shift  %></td>
+        
+  </tr>
+
+  <tr >
+  <th scope="row">Total AVG:</th>
+   <td><%= @company.attrib_satisfaction %></td>
+    <td><%= @company.attrib_work_environment  %></td>
+    <td><%= @company.attrib_cd  %></td>
+    <td><%= @company.attrib_flexibility  %></td>
+    <td><%=@company.attrib_relation  %></td>
+    <td> <%=  @company.attrib_leadership   %></td>
+    <td> <%= @company.attrib_pride  %></td>
+    <td> <%=  @company.attrib_opportunities  %></td>
+    <td> <%= @company.attrib_opinion %></td>
+    <td> <%=  @company.attrib_stimulatingjob  %></td>
+    <td> <%= @company.attrib_innovation %></td>
+    <td> <%=  @company.attrib_management  %></td>
+    <td> <%= @company.attrib_compensation  %></td>
+    <td> <%=  @company.attrib_workload  %></td>
+    <td> <%= @company.attrib_equality  %></td>
+    <td> <%= @company.attrib_objectives %></td>
+    <td><%= @company.attrib_cooperation  %></td>
+
+    <td><%=  @company.attrib_guidance  %></td>
+    <td><%= @company.attrib_reward  %></td>
+    <td><%= @company.attrib_career  %></td>
+    <td><%= @company.attrib_transparancy  %></td>
         
   </tr>
       

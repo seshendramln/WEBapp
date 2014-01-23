@@ -42,6 +42,8 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

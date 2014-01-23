@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115115651) do
+ActiveRecord::Schema.define(version: 20140122230900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,27 +20,27 @@ ActiveRecord::Schema.define(version: 20140115115651) do
     t.string   "name"
     t.string   "place"
     t.text     "Description"
-    t.integer  "attrib_work_environment"
-    t.integer  "attrib_cd"
-    t.integer  "attrib_flexibility"
-    t.integer  "attrib_relation"
-    t.integer  "attrib_leadership"
-    t.integer  "attrib_pride"
-    t.integer  "attrib_opportunities"
-    t.integer  "attrib_opinion"
-    t.integer  "attrib_stimulatingjob"
-    t.integer  "attrib_innovation"
-    t.integer  "attrib_management"
-    t.integer  "attrib_compensation"
-    t.integer  "attrib_workload"
-    t.integer  "attrib_equality"
-    t.integer  "attrib_objectives"
-    t.integer  "attrib_cooperation"
-    t.integer  "attrib_guidance"
-    t.integer  "attrib_reward"
-    t.integer  "attrib_career"
-    t.integer  "attrib_transparancy"
-    t.integer  "totalreviews"
+    t.float    "attrib_work_environment"
+    t.float    "attrib_cd"
+    t.float    "attrib_flexibility"
+    t.float    "attrib_relation"
+    t.float    "attrib_leadership"
+    t.float    "attrib_pride"
+    t.float    "attrib_opportunities"
+    t.float    "attrib_opinion"
+    t.float    "attrib_stimulatingjob"
+    t.float    "attrib_innovation"
+    t.float    "attrib_management"
+    t.float    "attrib_compensation"
+    t.float    "attrib_workload"
+    t.float    "attrib_equality"
+    t.float    "attrib_objectives"
+    t.float    "attrib_cooperation"
+    t.float    "attrib_guidance"
+    t.float    "attrib_reward"
+    t.float    "attrib_career"
+    t.float    "attrib_transparancy"
+    t.float    "totalreviews"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "profile_id"
@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 20140115115651) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.integer  "rank"
-    t.integer  "satisfaction"
+    t.float    "rank"
+    t.float    "satisfaction"
     t.integer  "reviews"
-    t.integer  "attrib_satisfaction"
+    t.float    "attrib_satisfaction"
   end
 
   create_table "company_profiles", force: true do |t|
@@ -129,6 +129,16 @@ ActiveRecord::Schema.define(version: 20140115115651) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "user_companies", force: true do |t|
     t.integer  "company_id"
