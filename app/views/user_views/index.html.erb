@@ -1,0 +1,29 @@
+<h1>Listing user_views</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_views.each do |user_view| %>
+      <tr>
+        <td><%= user_view.company_id %></td>
+        <td><%= user_view.user_id %></td>
+        <td><%= link_to 'Show', user_view %></td>
+        <td><%= link_to 'Edit', edit_user_view_path(user_view) %></td>
+        <td><%= link_to 'Destroy', user_view, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User view', new_user_view_path %>

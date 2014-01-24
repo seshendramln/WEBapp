@@ -1,6 +1,6 @@
 class CompanyRatingsController < ApplicationController
   before_action :set_company_rating, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /company_ratings
   # GET /company_ratings.json
   def index
@@ -99,19 +99,31 @@ def user_rating
    company_id = current_user.profile.companies.map(&:id)
    #rating = current_user.company_ratings.find(:all,:conditions=>["user_id = ? and company_id IN (?)",current_user.id,company_id])
    rating = current_user.company_ratings.where("user_id = ? and company_id IN (?)",current_user.id,company_id)
+   view =  UserView.find_by_user_id(current_user.id)
+   #views = current_user.user_view
+   size =  rating.size !=company_id.size
+   #raise size.inspect
    if rating.size !=company_id.size
-     if session[:company_id].blank?
-       session[:company_id] = params[:company_id]
+     if view.blank? 
+      companyid= params[:company_id]
+      view =   UserView.create(:user_id=>current_user.id)
+     #if session[:company_id].blank? 
+        #User_view.update_attributes(:user_id => current_user_id)
+        #session[:company_id] = params[:company_id]
        render :json=>"redirect".to_json
+      
      else
        company_id = company_id - rating.map(&:company_id)
        @company_rating = current_user.company_ratings.new(:company_id=>company_id.first)
        @company = Company.find(company_id.first)
        session[:company_id] = params[:company_id]
        render :layout =>false
+     
+       
      end
    else
-     session[:company_id] = nil
+     #session[:company_id] = nil
+     #view =   UserView.destroy(:user_id=>current_user.id)
      render :json => "redirect".to_json
      # redirect_to company_path(params[:company_id])
    end
@@ -129,4 +141,10 @@ def user_rating
     def company_rating_params
       params.require(:company_rating).permit(:user_id, :company_id, :satisfaction, :work_environment, :cd, :flexibility, :relation,  :leadership, :pride,  :opportunities,  :opinion,  :stimulatingjob,  :innovation,  :management,  :compensation,  :workload,  :equality,  :objectives,  :cooperation,  :guidance,  :reward,  :career,  :transparancy)
     end
+
+
+  def set_user_view
+      @user_view = UserView.find(params[:id])
+    end
+
 end

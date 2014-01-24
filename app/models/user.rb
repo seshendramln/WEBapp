@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   has_many :companies
   has_one :profile
   has_many :company_ratings
+
+
+
+
 end

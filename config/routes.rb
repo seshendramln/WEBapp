@@ -1,5 +1,7 @@
 Webapp::Application.routes.draw do
   
+  resources :user_views
+
   post '/rate' => 'rater#create', :as => 'rate'
    resources :profiles
 
